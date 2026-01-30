@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title> Web Layout </title>
+
+<style>
+
+/* Container */
+.container {
+    display: flex;
+    width: 100%;
+}
+
+/* Article */
+article {
+    padding: 20px;
+    width: 70%;
+    background-color: pink;
+    min-height: 300px;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 30%;
+    background: pink;
+    padding: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.sidebar ul li a:hover {
+    background: lightblue;
+}
+
+/* Top Navigation */
+ul.nav {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: darkblue;
+}
+
+ul.nav li a {
+    display: block;
+    color: pink;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul.nav li a:hover {
+    background-color: lightblue;
+    color: black;
+}
+
+/* Header */
+header {
+    background-color: gray;
+    padding: 5px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+}
+
+/* Footer */
+footer {
+    background-color: gray;
+    padding: 5px;
+    text-align: center;
+    color: white;
+}
+
+/* Clearfix */
+section::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h2> SDIHS </h2>
+    <h3 style="font-size: 18px;"> Santo Domingo Integrated High School </h3>
+</header>
+
+<!-- TOP NAVIGATION -->
+<ul class="nav">
+    <li> <a href="Document 1.html"> Home </a> </li>
+    <li> <a href="First Quarter.html"> First Quarter </a> </li>
+    <li> <a href="Second Quartery.html"> Second Quarter </a> </li>
+    <li> <a href="https://www.facebook.com/cindel.fernandez.2025?mibextid=ZbWKwL/"> About </a> </li>
+</ul>
+
+<section>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <nav class="sidebar">
+        <ul>
+            <li> <a href="#" onclick="loadContent('home')"> School Profile </a> </li>
+            <li> <a href="#" onclick="loadContent('shs')"> SHS </a> </li>
+            <li> <a href="#" onclick="loadContent('jhs')"> JHS </a> </li>
+        </ul>
+    </nav>
+   <!-- MAIN CONTENT -->
+    <article id="content">
+        <h1> School Profile </h1>
+        <p>
+            Santo Domingo Integrated High School was founded in 1971. <br>
+            It is located at Barangay Santo Domingo, City of Santa Rosa, Laguna.
+        </p>
+    </article>
+
+</div>
+
+</section>
+
+<footer>
+    <p> © Forth Year Students Batch 2025-2026</p>
+</footer>
+
+<script>
+
+function loadContent(section) {
+
+    const content = document.getElementById('content');
+
+    if (section === 'home') {
+        content.innerHTML = `
+            <h2> School Profile </h2>
+            <h3> Mission </h3>
+            <p>
+                We dream of Filipinos who passionately love their country and whose values and competencies
+                enable them to realize their full potential and contribute meaningfully to building the nation.
+   <h4> Vision </h4> 
+<p>Teachers facilitate learning and constantly nurture every learner Administrators and staff, as stewards of the Institution, Ensure an enabling and supportive environment for effective learning to happen </p> 
+
+<h5>Core Values</h5>
+<p>MakaDiyos</p>
+<p>Makatao</p>
+<p>Makakalikasan</p>
+<p>Makabansa</p>
+        `;
+    }
+else if (section === 'shs') {
+        content.innerHTML = `
+            <h2> SHS </h2>
+            <p> Senior High School (SHS) refers to the final two years of secondary education, typically grades 11 and 12, which prepare students for higher education, employment, or entrepreneurship. Students choose a specific track, such as Academic (e.g., STEM, HUMSS), Technical-Vocational-Livelihood, Arts and Design, or Sports, to specialize their learning in preparation for their future. </p>
+
+<h3>HUMSS</h3>
+<p>The Humanities and Social Sciences (HUMSS) strand is an academic track in Senior High School that focuses on the study of human behavior, society, culture, and the arts. It equips students with critical thinking, communication, and social awareness skills, preparing them for college courses such as journalism, psychology, law, and education. The curriculum includes subjects like Philippine Politics and Governance, Discipline and Ideas in Social Sciences, and Creative Writing.</p> 
+<h4>ICT</h4>
+<p>The ICT (Information and Communication Technology) strand is a senior high school program under the Technical-Vocational Livelihood (TVL) track that provides students with skills in information technology, such as computer systems, programming, and web design. It prepares students for careers or further education in the tech industry by teaching them practical skills in areas like software and network engineering, animation, graphic arts, and more. Earning a National Certificate (NC) upon passing TESDA assessments can also help graduates find employment immediately after high school. 
+ </p>
+<h5>EPAS</h5>
+<p> EPAS is a senior high school strand that stands for Electronic Products Assembly and Servicing. It focuses on developing the knowledge and skills needed to assemble, install, and repair electronic products and systems. This technical-vocational track prepares students for careers in the electronics industry, with competencies in areas like performing computer operations, testing components, and servicing both consumer and industrial electronic products </p>
+
+
+
+        `;
+    }
+
+    else if (section === 'jhs') {
+        content.innerHTML = `
+            <h2> JHS </h2>
+            <p>Junior high school is a level of education that typically covers grades 7 through 10, acting as a bridge between elementary school and senior high school. It provides students with a more advanced curriculum, helps them develop core academic and critical thinking skills, and prepares them for their future educational or career paths in senior high school. This level of schooling focuses on holistic development, including social and emotional skills, and offers core subjects along with specialized electives.  </p>
+      
+<h3>ICT</h3>
+<p>  The ICT (Information and Communication Technology) strand is a senior high school program under the Technical-Vocational Livelihood (TVL) track that provides students with skills in information technology, such as computer systems, programming, and web design. It prepares students for careers or further education in the tech industry by teaching them practical skills in areas like software and network engineering, animation, graphic arts, and more. Earning a National Certificate (NC) upon passing TESDA assessments can also help graduates find employment immediately after high school.</p>
+
+<h4>EPAS</h4>
+<p> EPAS is a senior high school strand that stands for Electronic Products Assembly and Servicing. It focuses on developing the knowledge and skills needed to assemble, install, and repair electronic products and systems. This technical-vocational track prepares students for careers in the electronics industry, with competencies in areas like performing computer operations, testing components, and servicing both consumer and industrial electronic products </p>
+
+  `;
+    }
+}
+
+</script>
+
+</body>
+</html>
